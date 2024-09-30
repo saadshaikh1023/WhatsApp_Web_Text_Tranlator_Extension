@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Translator",
+  "version": "1.0",
+  "description": "Translate messages on WhatsApp Web.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
+}
